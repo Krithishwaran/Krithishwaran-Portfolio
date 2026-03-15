@@ -18,13 +18,13 @@ document.querySelectorAll('.hover-target').forEach(el => {
     el.addEventListener('mouseenter', () => {
         outline.style.width = '50px';
         outline.style.height = '50px';
-        outline.style.borderColor = 'rgba(0, 255, 204, 1)';
-        outline.style.backgroundColor = 'rgba(0, 255, 204, 0.1)';
+        outline.style.borderColor = 'rgba(56, 189, 248, 1)';
+        outline.style.backgroundColor = 'rgba(56, 189, 248, 0.1)';
     });
     el.addEventListener('mouseleave', () => {
         outline.style.width = '30px';
         outline.style.height = '30px';
-        outline.style.borderColor = 'rgba(0, 255, 204, 0.5)';
+        outline.style.borderColor = 'rgba(56, 189, 248, 0.5)';
         outline.style.backgroundColor = 'transparent';
     });
 });
