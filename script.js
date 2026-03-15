@@ -19,7 +19,7 @@ document.querySelectorAll('.hover-target').forEach(el => {
         outline.style.width = '50px';
         outline.style.height = '50px';
         outline.style.borderColor = 'rgba(56, 189, 248, 1)';
-        outline.style.backgroundColor = 'rgba(56, 189, 248, 0.1)';
+        outline.style.backgroundColor = 'transparent';
     });
     el.addEventListener('mouseleave', () => {
         outline.style.width = '30px';
