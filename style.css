@@ -9,7 +9,7 @@
 
 body {
     background-color: #0f172a;
-    color: #f0f0f0;
+    color: #f8fafc;
     font-family: 'Space Grotesk', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
@@ -29,13 +29,12 @@ body {
     pointer-events: none;
     z-index: 999;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px #38bdf8;
 }
 
 .cursor-outline {
     width: 30px;
     height: 30px;
-    border: 2px solid rgba(56, 189, 248, 0.5);
+    border: 1px solid rgba(56, 189, 248, 0.5);
     position: fixed;
     border-radius: 50%;
     pointer-events: none;
@@ -45,25 +44,25 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 100px 20px;
 }
 
 .hero {
-    min-height: 60vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 600;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
     margin-bottom: 10px;
-    min-height: 80px;
+    min-height: 70px;
     color: #ffffff;
 }
 
@@ -71,7 +70,7 @@ h1 {
     font-size: 1.2rem;
     font-weight: 300;
     color: #94a3b8;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .contact-pill {
@@ -83,92 +82,85 @@ h1 {
 }
 
 .divider {
-    color: #475569;
+    color: #334155;
 }
 
 .section-title {
-    font-size: 0.9rem;
-    letter-spacing: 4px;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
     color: #38bdf8;
     margin-bottom: 30px;
     text-transform: uppercase;
-    border-bottom: 1px solid #334155;
-    padding-bottom: 10px;
 }
 
 .block {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
-.block p {
-    font-size: 1.1rem;
+.about-text {
+    font-size: 1.2rem;
     font-weight: 300;
     max-width: 800px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    border: 1px solid #334155;
-    background-color: #1e293b;
-    padding: 30px;
-    transition: all 0.4s ease;
-}
-
-.cert-card {
-    border: 1px solid #334155;
-    background-color: #1e293b;
-    padding: 30px;
-    margin-bottom: 15px;
-    transition: all 0.4s ease;
-}
-
-.hover-target:hover {
-    background-color: #0f172a;
-    border-color: #38bdf8;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-.card h3, .cert-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-
-.card p, .cert-card p {
-    font-size: 0.9rem;
+    line-height: 1.8;
     color: #cbd5e1;
 }
 
-.list-container {
+/* Strict Grid System */
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsive collapse for mobile */
+@media (max-width: 768px) {
+    .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+.card {
+    border: 1px solid #1e293b;
+    background-color: transparent;
+    padding: 35px 30px;
+    border-radius: 4px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.list-item {
-    border: 1px solid #334155;
-    background-color: #1e293b;
-    padding: 20px;
-    font-weight: 300;
-    transition: transform 0.3s ease, padding-left 0.3s ease, border-color 0.3s ease;
-}
-
-.list-item:hover {
-    transform: translateX(10px);
+.hover-target:hover {
     border-color: #38bdf8;
-    padding-left: 30px;
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
 }
 
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active {
@@ -182,11 +174,11 @@ h1 {
 footer {
     text-align: center;
     font-size: 0.8rem;
-    color: #94a3b8;
+    color: #475569;
     letter-spacing: 2px;
     margin-top: 100px;
-    padding-top: 20px;
-    border-top: 1px solid #334155;
+    padding-top: 30px;
+    border-top: 1px solid #1e293b;
 }
 
 a, button, .hover-target {
